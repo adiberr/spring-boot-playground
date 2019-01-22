@@ -32,7 +32,7 @@ public class PropertyConfiguration {
         FakeDataSource fakeDataSource = new FakeDataSource();
         fakeDataSource.setUsername(username);
         fakeDataSource.setPassword(password);
-        fakeDataSource.setDbUrl(jmsUrl);
+        fakeDataSource.setDbUrl(url);
         return fakeDataSource;
     }
 
@@ -41,7 +41,7 @@ public class PropertyConfiguration {
         FakeJmsSource fakeJmsSource = new FakeJmsSource();
         fakeJmsSource.setUsername(jmsUsername);
         fakeJmsSource.setPassword(jmsPassword);
-        fakeJmsSource.setDbUrl(url);
+        fakeJmsSource.setDbUrl(jmsUrl);
         return fakeJmsSource;
     }
 

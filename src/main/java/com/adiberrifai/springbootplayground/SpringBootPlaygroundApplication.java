@@ -1,6 +1,7 @@
 package com.adiberrifai.springbootplayground;
 
 import com.adiberrifai.springbootplayground.examplebeans.FakeDataSource;
+import com.adiberrifai.springbootplayground.examplebeans.FakeJmsSource;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -15,6 +16,11 @@ public class SpringBootPlaygroundApplication {
         FakeDataSource fakeDataSource = (FakeDataSource) ctx.getBean(FakeDataSource.class);
 
         System.out.println(fakeDataSource);
+
+        FakeJmsSource fakeJmsSource = (FakeJmsSource) ctx.getBean(FakeJmsSource.class);
+
+        System.out.println(fakeJmsSource);
+
     }
 
 }

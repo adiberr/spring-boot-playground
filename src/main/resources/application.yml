@@ -3,3 +3,11 @@ com :
     username: JMS Username
     password: secret
     dburl: http://localhost:9000
+
+---
+spring:
+  profiles: dev
+
+com :
+  jms:
+    username: yet another dev user (YADU)

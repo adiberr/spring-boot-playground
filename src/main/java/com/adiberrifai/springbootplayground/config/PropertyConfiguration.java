@@ -1,15 +1,20 @@
 package com.adiberrifai.springbootplayground.config;
 
 import com.adiberrifai.springbootplayground.examplebeans.FakeDataSource;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
+import org.springframework.core.env.Environment;
 
 @Configuration
 @PropertySource("classpath:datasource.properties")
 public class PropertyConfiguration {
+
+    @Autowired
+    Environment env;
 
     @Value("${com.username}")
     String username;
@@ -23,7 +28,7 @@ public class PropertyConfiguration {
     @Bean
     public FakeDataSource fakeDataSource() {
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUsername(username);
+        fakeDataSource.setUsername(env.getProperty("SU"));
         fakeDataSource.setPassword(password);
         fakeDataSource.setDbUrl(url);
         return fakeDataSource;
